@@ -1,0 +1,148 @@
+/* AdminElectivesCirculate.css */
+
+/* ---------------- Container ---------------- */
+.electives-circulate-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px 30px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.electives-circulate-container h1 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 30px;
+}
+
+/* ---------------- Section Styling ---------------- */
+.section {
+  margin-bottom: 40px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.section h2 {
+  margin-bottom: 15px;
+  color: #34495e;
+  font-size: 1.4rem;
+}
+
+/* ---------------- Electives List ---------------- */
+.electives-list {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.elective-card {
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  background-color: #fafafa;
+  cursor: pointer;
+}
+
+.elective-card:hover {
+  background-color: #f0f7ff;
+  border-color: #3498db;
+}
+
+.elective-card input[type="checkbox"] {
+  margin-right: 12px;
+  width: 18px;
+  height: 18px;
+  accent-color: #3498db;
+}
+
+.elective-card span {
+  font-weight: 500;
+  color: #2c3e50;
+}
+
+/* ---------------- Buttons ---------------- */
+.select-all-btn,
+.circulate-btn,
+.stop-btn {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.select-all-btn {
+  background-color: #f0f0f0;
+  color: #2c3e50;
+  margin-bottom: 12px;
+}
+
+.select-all-btn:hover {
+  background-color: #e0e0e0;
+}
+
+.circulate-btn {
+  background-color: #3498db;
+  color: #fff;
+  margin-top: 12px;
+}
+
+.circulate-btn:disabled {
+  background-color: #a3c4e8;
+  cursor: not-allowed;
+}
+
+.circulate-btn:hover:not(:disabled) {
+  background-color: #2980b9;
+}
+
+.stop-btn {
+  background-color: #e74c3c;
+  color: #fff;
+  margin-top: 12px;
+}
+
+.stop-btn:disabled {
+  background-color: #f5a5a0;
+  cursor: not-allowed;
+}
+
+.stop-btn:hover:not(:disabled) {
+  background-color: #c0392b;
+}
+
+/* ---------------- Responsive ---------------- */
+@media (max-width: 600px) {
+  .electives-circulate-container {
+    padding: 15px 20px;
+  }
+
+  .elective-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .elective-card span {
+    margin-top: 5px;
+  }
+
+  .select-all-btn,
+  .circulate-btn,
+  .stop-btn {
+    width: 100%;
+    text-align: center;
+  }
+}

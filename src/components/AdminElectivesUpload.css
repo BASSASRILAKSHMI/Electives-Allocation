@@ -1,0 +1,32 @@
+.upload-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #f9fafb;
+}
+
+.upload-container input {
+  margin: 20px 0;
+}
+
+.upload-container button {
+  padding: 12px 25px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  background-color: #059669;
+  color: white;
+  cursor: pointer;
+}
+
+.upload-container button:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+}
+
+.message {
+  margin-top: 15px;
+  font-weight: 500;
+}

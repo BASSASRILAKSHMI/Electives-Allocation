@@ -1,0 +1,69 @@
+.student-registration-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #e0f2fe, #f0f9ff);
+  font-family: "Poppins", sans-serif;
+}
+
+.page-title {
+  color: #1e3a8a;
+  margin-bottom: 40px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.upload-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+.upload-box {
+  width: 400px;
+  height: 180px;
+  border: 2px dashed #2563eb;
+  border-radius: 12px;
+  background-color: #ffffff;
+  color: #555;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.upload-box:hover {
+  background-color: #eff6ff;
+  border-color: #1d4ed8;
+  transform: scale(1.02);
+}
+
+.upload-box input[type="file"] {
+  display: none;
+}
+
+.upload-box span {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.upload-btn {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.upload-btn:hover {
+  background-color: #1d4ed8;
+}

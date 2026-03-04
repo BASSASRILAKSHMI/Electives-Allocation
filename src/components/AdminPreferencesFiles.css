@@ -1,0 +1,169 @@
+/* =========================
+   Page Layout
+========================= */
+
+.admin-preferences-files {
+  padding: 28px 32px;
+  background-color: #f4f6fb;
+  min-height: 100vh;
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+}
+
+/* =========================
+   Page Title
+========================= */
+
+.admin-preferences-files h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 18px;
+}
+
+/* =========================
+   Toolbar
+========================= */
+
+.action-bar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+/* Buttons */
+
+.analyse-btn,
+.delete-btn {
+  padding: 9px 22px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+/* Analyse */
+
+.analyse-btn {
+  background-color: #2563eb;
+  color: #ffffff;
+}
+
+.analyse-btn:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+/* Delete */
+
+.delete-btn {
+  background-color: #dc2626;
+  color: #ffffff;
+}
+
+.delete-btn:hover {
+  background-color: #b91c1c;
+  transform: translateY(-1px);
+}
+
+/* Disabled */
+
+.analyse-btn:disabled,
+.delete-btn:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* =========================
+   Table Container
+========================= */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+/* =========================
+   Table Header
+========================= */
+
+thead {
+  background-color: #eef2f7;
+}
+
+th {
+  padding: 14px 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+  text-align: center;
+  border-bottom: 1px solid #dbe1ea;
+}
+
+/* =========================
+   Table Body
+========================= */
+
+td {
+  padding: 12px;
+  font-size: 14px;
+  color: #374151;
+  text-align: center;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+tbody tr:hover {
+  background-color: #f9fafb;
+}
+
+/* =========================
+   Checkbox Styling
+========================= */
+
+th:first-child,
+td:first-child {
+  width: 50px;
+}
+
+input[type="checkbox"] {
+  width: 17px;
+  height: 17px;
+  accent-color: #2563eb;
+  cursor: pointer;
+}
+
+/* =========================
+   Download Link
+========================= */
+
+td a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+td a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   Responsive
+========================= */
+
+@media (max-width: 768px) {
+  th, td {
+    padding: 9px;
+    font-size: 13px;
+  }
+
+  .action-bar {
+    justify-content: center;
+  }
+}

@@ -1,0 +1,180 @@
+/* ===== General Container ===== */
+.student-dashboard-container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  background-color: #f9faff;
+}
+
+/* ===== Student Info Card ===== */
+.student-info {
+  background: #ffffff;
+  padding: 20px 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.student-info h2 {
+  color: #1f3c88;
+  font-size: 1.9rem;
+  margin-bottom: 10px;
+}
+
+.student-info p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* ===== Divider ===== */
+.divider {
+  border: none;
+  border-top: 2px solid #1f3c88;
+  margin: 30px 0;
+  opacity: 0.3;
+}
+
+/* ===== Status Message ===== */
+.status-message {
+  font-size: 1.05rem;
+  color: #1a2d5a;
+  margin-bottom: 20px;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* ===== Table Cards ===== */
+.allocated-electives-table,
+.elective-group-card {
+  background: #ffffff;
+  padding: 20px 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30px;
+  overflow-x: auto;
+}
+
+.allocated-electives-table h3,
+.elective-group-card h3 {
+  color: #1f3c88;
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+  border-bottom: 2px solid #1f3c88;
+  display: inline-block;
+  padding-bottom: 5px;
+  text-align: center;
+  width: 100%;
+}
+
+/* ===== Table Styling ===== */
+.allocated-electives-table table,
+.elective-table {
+  width: 100%;
+  border-collapse: separate; /* separate row backgrounds */
+  border-spacing: 0 5px; /* space between rows */
+  text-align: center; /* center all columns */
+}
+
+.allocated-electives-table th,
+.allocated-electives-table td,
+.elective-table th,
+.elective-table td {
+  padding: 12px 15px;
+}
+
+.allocated-electives-table th,
+.elective-table th {
+  background-color: #1f3c88;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 6px 6px 0 0;
+  text-align: center;
+}
+
+.allocated-electives-table tbody tr,
+.elective-table tbody tr {
+  background-color: #f4f6ff;
+  transition: background 0.2s;
+  border-radius: 8px;
+}
+
+.allocated-electives-table tbody tr:nth-child(even),
+.elective-table tbody tr:nth-child(even) {
+  background-color: #e8ecff;
+}
+
+.allocated-electives-table tbody tr:hover,
+.elective-table tbody tr:hover {
+  background-color: #d0d8ff;
+}
+
+/* ===== Preference Select & Allocated Label ===== */
+.elective-table select {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 0.95rem;
+  outline: none;
+  transition: all 0.2s;
+}
+
+.elective-table select:focus {
+  border-color: #1f3c88;
+  box-shadow: 0 0 5px rgba(31, 60, 136, 0.3);
+}
+
+.elective-table span {
+  font-weight: 600;
+  color: #1f3c88;
+}
+
+/* ===== Submit Button ===== */
+.submit-btn {
+  background-color: #1f3c88;
+  color: #fff;
+  padding: 12px 22px;
+  border: none;
+  border-radius: 10px;
+  font-size: 2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  margin-top: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.submit-btn:hover {
+  background-color: #15306a;
+  transform: translateY(-2px);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .student-dashboard-container {
+    padding: 15px;
+  }
+
+  .student-info,
+  .allocated-electives-table,
+  .elective-group-card {
+    padding: 15px;
+  }
+
+  .allocated-electives-table th,
+  .allocated-electives-table td,
+  .elective-table th,
+  .elective-table td {
+    padding: 8px 10px;
+    font-size: 0.95rem;
+  }
+
+  .submit-btn {
+    width: 100%;
+  }
+}

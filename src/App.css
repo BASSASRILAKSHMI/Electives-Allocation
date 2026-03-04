@@ -1,0 +1,163 @@
+/* ======================================================
+   PAGE WRAPPER
+====================================================== */
+.homepage {
+  min-height: 100vh;
+  background: #f5f7fb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* ======================================================
+   CARD
+====================================================== */
+.homepage .container {
+  background: #ffffff;
+  width: 420px;
+  padding: 42px 38px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* ======================================================
+   TITLE
+====================================================== */
+.homepage .project-title {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 28px;
+}
+
+.homepage .project-title span {
+  color: #2563eb;
+}
+
+/* ======================================================
+   ROLE SWITCH
+====================================================== */
+/* ======================================================
+   ROLE SWITCH (ROUND ONLY)
+====================================================== */
+.homepage .toggle-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 26px;
+}
+
+/* Remove rectangle */
+.homepage .toggle {
+  display: flex;
+  gap: 12px;
+  background: none;
+  border: none;
+}
+
+/* Pill buttons */
+.homepage .toggle-btn {
+  padding: 10px 26px;
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+  cursor: pointer;
+  border-radius: 999px;   /* fully round */
+  transition: all 0.25s ease;
+}
+
+/* Hover */
+.homepage .toggle-btn:hover {
+  border-color: #2563eb;
+  color: #2563eb;
+}
+
+/* Active */
+.homepage .toggle-btn.active {
+  background: #2563eb;
+  color: #ffffff;
+  border-color: #2563eb;
+}
+
+
+/* ======================================================
+   FORM
+====================================================== */
+.homepage .form-container h2 {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 18px;
+}
+
+.homepage .form-container input {
+  width: 100%;
+  padding: 11px 12px;
+  margin-bottom: 14px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  background: #ffffff;
+}
+
+.homepage .form-container input:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+/* ======================================================
+   BUTTONS
+====================================================== */
+.homepage .form-container button {
+  width: 100%;
+  padding: 11px;
+  margin-top: 6px;
+  background: #2563eb;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.homepage .form-container button:hover {
+  background: #1e40af;
+}
+
+/* Change Password */
+.homepage .change-password-btn {
+  background: #ffffff !important;
+  color: #2563eb !important;
+  border: 1px solid #2563eb !important;
+}
+
+.homepage .change-password-btn:hover {
+  background: #2563eb !important;
+  color: #ffffff !important;
+}
+
+/* ======================================================
+   MESSAGE
+====================================================== */
+.homepage .form-container p {
+  text-align: center;
+  font-size: 13px;
+  margin-top: 10px;
+  color: #059669;
+}
+
+/* ======================================================
+   MOBILE
+====================================================== */
+@media (max-width: 480px) {
+  .homepage .container {
+    width: 90%;
+    padding: 32px 28px;
+  }
+}

@@ -1,0 +1,88 @@
+/* ======================================================
+   PAGE WRAPPER
+====================================================== */
+.admin-dashboard {
+  min-height: 100vh;
+  background: #f5f7fb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* ======================================================
+   CARD
+====================================================== */
+.admin-dashboard .dashboard-card {
+  background: #ffffff;
+  width: 700px;
+  padding: 40px 45px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* ======================================================
+   TITLE
+====================================================== */
+.admin-dashboard .dashboard-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 32px;
+}
+
+/* ======================================================
+   BUTTON GRID
+====================================================== */
+.admin-dashboard .button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+
+/* ======================================================
+   BUTTONS
+====================================================== */
+.admin-dashboard .button-container button {
+  padding: 16px;
+  background: #7186b5;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 23px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background 0.25s ease, transform 0.2s ease;
+}
+
+/* Hover */
+.admin-dashboard .button-container button:hover {
+  background: #1e40af;
+  transform: translateY(-2px);
+}
+
+/* Active */
+.admin-dashboard .button-container button:active {
+  transform: scale(0.98);
+}
+
+/* ======================================================
+   RESPONSIVE
+====================================================== */
+@media (max-width: 700px) {
+  .admin-dashboard .dashboard-card {
+    width: 90%;
+    padding: 32px 26px;
+  }
+
+  .admin-dashboard .button-container {
+    grid-template-columns: 1fr;
+  }
+}

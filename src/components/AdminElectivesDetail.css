@@ -1,0 +1,126 @@
+/* Page container */
+.electives-detail-container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 24px 32px;
+  background-color: #f8fafc;
+  font-family: "Segoe UI", Roboto, sans-serif;
+}
+
+/* Top heading */
+.electives-detail-container h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 24px;
+  font-weight: 600;
+  color: #1f2933;
+}
+
+/* Each elective group card */
+.elective-group {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+}
+
+/* Group title */
+.elective-group h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2563eb;
+  margin-bottom: 16px;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 6px;
+}
+
+/* Subject row */
+.subject-row {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+/* Input fields */
+.subject-row input {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.subject-row input:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15);
+}
+
+/* Buttons inside group */
+.elective-group button {
+  margin-top: 10px;
+  margin-right: 10px;
+  padding: 8px 14px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+/* Add subject button */
+.elective-group button:first-of-type {
+  background-color: #e0f2fe;
+  color: #0369a1;
+}
+
+.elective-group button:first-of-type:hover {
+  background-color: #bae6fd;
+}
+
+/* Update group button */
+.elective-group button:last-of-type {
+  background-color: #2563eb;
+  color: #ffffff;
+}
+
+.elective-group button:last-of-type:hover {
+  background-color: #1d4ed8;
+}
+
+/* Save all button */
+.save-all-btn {
+  display: block;
+  margin: 30px auto 0;
+  padding: 12px 28px;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #16a34a;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.save-all-btn:hover {
+  background-color: #15803d;
+  transform: translateY(-1px);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .electives-detail-container {
+    padding: 20px;
+  }
+
+  .subject-row {
+    flex-direction: column;
+  }
+
+  .save-all-btn {
+    width: 100%;
+  }
+}
