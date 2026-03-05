@@ -55,4 +55,7 @@ mongoose
 
 // ✅ Start Server
 const PORT = process.env.PORT || 5000;
+app.get("/", (req, res) => {
+  res.send("Electives Allocation Backend Running 🚀");
+});
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
