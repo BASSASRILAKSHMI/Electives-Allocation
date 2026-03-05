@@ -33,7 +33,7 @@
 //       if (isRegister) {
 //         // ------------------ REGISTER ------------------
 //         if (role === "student") {
-//           const res = await axios.post("http://localhost:5000/api/auth/register/student", {
+//           const res = await axios.post("http://98.130.122.229:5000/api/auth/register/student", {
 //             fullName,
 //             rollNumber,
 //             department,
@@ -44,7 +44,7 @@
 //           });
 //           setMessage(res.data.message);
 //         } else {
-//           const res = await axios.post("http://localhost:5000/api/auth/register/admin", {
+//           const res = await axios.post("http://98.130.122.229:5000/api/auth/register/admin", {
 //             facultyId,
 //             name,
 //             department: adminDepartment,
@@ -56,7 +56,7 @@
 //       } else {
 //         // ------------------ LOGIN ------------------
 //         if (role === "student") {
-//   const res = await axios.post("http://localhost:5000/api/auth/login/student", {
+//   const res = await axios.post("http://98.130.122.229:5000/api/auth/login/student", {
 //     email,
 //     password,
 //   });
@@ -83,7 +83,7 @@
 //   }
 // }
 //  else {
-//           const res = await axios.post("http://localhost:5000/api/auth/login/admin", {
+//           const res = await axios.post("http://98.130.122.229:5000/api/auth/login/admin", {
 //             email,
 //             password,
 //           });
@@ -272,7 +272,7 @@ function App() {
 
     try {
       if (role === "student") {
-  const res = await axios.post("http://localhost:5000/api/auth/login/student", {
+  const res = await axios.post("http://98.130.122.229:5000/api/auth/login/student", {
     rollno,
     password,
   });
@@ -287,7 +287,7 @@ function App() {
 }
  else {
         // ✅ Admin login (still by email)
-        const res = await axios.post("http://localhost:5000/api/auth/login/admin", {
+        const res = await axios.post("http://98.130.122.229:5000/api/auth/login/admin", {
           email,
           password,
         });

@@ -33,7 +33,7 @@ const StudentRegistration: React.FC = () => {
       console.log("Parsed Data:", jsonData);
 
       // Send to backend
-      const res = await axios.post("http://localhost:5000/api/admin/upload-students", {
+      const res = await axios.post("http://98.130.122.229:5000/api/admin/upload-students", {
         students: jsonData,
       });
 

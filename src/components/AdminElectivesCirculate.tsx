@@ -27,7 +27,7 @@ const AdminElectivesCirculate: React.FC = () => {
         }
 
         const res = await axios.get(
-          "http://localhost:5000/api/admin/electives/meta",
+          "http://98.130.122.229:5000/api/admin/electives/meta",
           { headers: { Authorization: `Bearer ${token}` } }
         );
 
@@ -89,7 +89,7 @@ const AdminElectivesCirculate: React.FC = () => {
       const token = localStorage.getItem("token");
 
       await axios.post(
-        "http://localhost:5000/api/admin/electives/circulate",
+        "http://98.130.122.229:5000/api/admin/electives/circulate",
         { selected: toCirculate },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -106,7 +106,7 @@ const AdminElectivesCirculate: React.FC = () => {
       const token = localStorage.getItem("token");
 
       await axios.post(
-        "http://localhost:5000/api/admin/electives/stop-circulation",
+        "http://98.130.122.229:5000/api/admin/electives/stop-circulation",
         { selected: toStop },
         { headers: { Authorization: `Bearer ${token}` } }
       );

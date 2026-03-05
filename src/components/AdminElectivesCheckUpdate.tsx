@@ -19,7 +19,7 @@ const AdminElectivesCheckUpdate = () => {
       try {
         const token = localStorage.getItem("token"); // 🔥 Admin token
         const res = await axios.get<ElectiveMeta[]>(
-          "http://localhost:5000/api/admin/electives/meta",
+          "http://98.130.122.229:5000/api/admin/electives/meta",
           {
             headers: {
               Authorization: `Bearer ${token}`, // 🔑 send token to backend

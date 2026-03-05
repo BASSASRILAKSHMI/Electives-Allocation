@@ -20,7 +20,7 @@ export default function ChangePassword() {
     }
 
     try {
-      const res = await axios.post("http://localhost:5000/api/change-password", {
+      const res = await axios.post("http://98.130.122.229:5000/api/change-password", {
         role,
         identifier,
         newPassword,

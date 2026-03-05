@@ -33,7 +33,7 @@ const AdminElectivesDetail = () => {
       try {
         const token = localStorage.getItem("token");
         const res = await axios.get<ElectivesData>(
-          "http://localhost:5000/api/admin/electives",
+          "http://98.130.122.229:5000/api/admin/electives",
           {
             headers: { Authorization: `Bearer ${token}` },
             params: { regulation, department, semester },
@@ -76,7 +76,7 @@ const AdminElectivesDetail = () => {
       const token = localStorage.getItem("token");
       const group = electivesData.electiveGroups[groupIndex];
       await axios.put(
-        `http://localhost:5000/api/admin/electives/update-group`,
+        `http://98.130.122.229:5000/api/admin/electives/update-group`,
         { regulation, department, semester, groupIndex, group },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -93,7 +93,7 @@ const AdminElectivesDetail = () => {
     try {
       const token = localStorage.getItem("token");
       await axios.put(
-        `http://localhost:5000/api/admin/electives/update-all`,
+        `http://98.130.122.229:5000/api/admin/electives/update-all`,
         { regulation, department, semester, electivesData },
         { headers: { Authorization: `Bearer ${token}` } }
       );

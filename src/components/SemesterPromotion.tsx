@@ -1,102 +1,3 @@
-// import { useState } from "react";
-// import "./SemesterPromotion.css";
-
-// const departments = [
-//   "CSE",
-//   "IT",
-//   "ECE",
-//   "EEE",
-//   "MECH",
-//   "CIVIL",
-//   "AIDS",
-//   "AIML",
-//   "CHE",
-//   "BIOTECH",
-//   "MCA",
-//   "MBA",
-//   "IOT",
-// ];
-
-// export default function SemesterPromotion() {
-//   const [loading, setLoading] = useState(false);
-//   const [message, setMessage] = useState("");
-//   const [selectedDept, setSelectedDept] = useState<string | null>(null);
-//   const [selectedSem, setSelectedSem] = useState<number | null>(null);
-
-//   const handlePromote = async (dept: string, sem: number) => {
-//     setLoading(true);
-//     setMessage("");
-
-//     const response = await fetch("http://localhost:5000/api/promote", {
-//       method: "POST",
-//       headers: { "Content-Type": "application/json" },
-//       body: JSON.stringify({ department: dept, semester: sem }),
-//     });
-
-//     const data = await response.json();
-//     setMessage(data.message);
-//     setLoading(false);
-//   };
-
-//   return (
-//     <div className="promotion-page">
-//       <h1 className="promotion-title">🎓 Semester Promotion</h1>
-//       {message && <p className="message">{message}</p>}
-
-//       <div className="dept-grid">
-//         {departments.map((dept) => (
-//           <div
-//             key={dept}
-//             className={`dept-card ${selectedDept === dept ? "active" : ""}`}
-//           >
-//             <h2
-//               className="dept-header"
-//               onClick={() =>
-//                 setSelectedDept(selectedDept === dept ? null : dept)
-//               }
-//             >
-//               {dept} {selectedDept === dept ? "▲" : "▼"}
-//             </h2>
-
-//             {selectedDept === dept && (
-//               <div className="dropdown-section">
-//                 <select
-//                   className="sem-dropdown"
-//                   onChange={(e) => setSelectedSem(Number(e.target.value))}
-//                   defaultValue=""
-//                 >
-//                   <option value="" disabled>
-//                     Select Semester
-//                   </option>
-//                   {Array.from(
-//                     { length: ["MCA", "MBA"].includes(dept) ? 4 : 8 },
-//                     (_, i) => i + 1
-//                   ).map((sem) => (
-//                     <option key={sem} value={sem}>
-//                       {sem === (["MCA", "MBA"].includes(dept) ? 4 : 8)
-//                         ? "Mark Completed"
-//                         : `Promote Sem ${sem} → ${sem + 1}`}
-//                     </option>
-//                   ))}
-//                 </select>
-
-//                 <button
-//                   className="promote-btn"
-//                   disabled={loading || !selectedSem}
-//                   onClick={() => selectedSem && handlePromote(dept, selectedSem)}
-//                 >
-//                   {loading ? "Processing..." : "Promote"}
-//                 </button>
-//               </div>
-//             )}
-//           </div>
-//         ))}
-//       </div>
-//     </div>
-//   );
-// }
-
-
 import { useState } from "react";
 import "./SemesterPromotion.css";
 
@@ -130,7 +31,7 @@ export default function SemesterPromotion() {
     setLoading(true);
     setMessage("");
 
-    const response = await fetch("http://localhost:5000/api/promote", {
+    const response = await fetch("http://98.130.122.229:5000/api/promote", {
       method: "POST",
       body: formData,
     });

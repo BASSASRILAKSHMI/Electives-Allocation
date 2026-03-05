@@ -1,166 +1,3 @@
-// import { useEffect, useState } from "react";
-// import axios from "axios";
-// import "./AdminPreferencesFiles.css";
-
-// interface FileData {
-//   regulation: string;
-//   department: string;
-//   semester: string;
-//   electiveType: string;
-//   filename: string;
-// }
-
-// const AdminPreferencesFiles = () => {
-//   const [files, setFiles] = useState<FileData[]>([]);
-//   const [selected, setSelected] = useState<string[]>([]);
-
-//   // ---------------- FETCH FILES ----------------
-//   useEffect(() => {
-//     fetchFiles();
-//   }, []);
-
-//   const fetchFiles = () => {
-//     const token = localStorage.getItem("token");
-
-//     axios.get(
-//       "http://localhost:5000/api/admin/electives/preference-files",
-//       { headers: { Authorization: `Bearer ${token}` } }
-//     ).then(res => setFiles(res.data));
-//   };
-
-//   // ---------------- SELECT SINGLE ----------------
-//   const toggleSelect = (filename: string) => {
-//     setSelected(prev =>
-//       prev.includes(filename)
-//         ? prev.filter(f => f !== filename)
-//         : [...prev, filename]
-//     );
-//   };
-
-//   // ---------------- SELECT ALL ----------------
-//   const toggleSelectAll = () => {
-//     if (selected.length === files.length) {
-//       setSelected([]);
-//     } else {
-//       setSelected(files.map(f => f.filename));
-//     }
-//   };
-
-//   // ---------------- ANALYSE ----------------
-//   const handleAnalyse = () => {
-//   if (selected.length === 0) return;
-
-//   // store selected filenames
-//   localStorage.setItem(
-//     "analyzeFiles",
-//     JSON.stringify(selected)
-//   );
-
-//   // navigate to analyzed page
-//   window.location.href = "/admin/analyzed-data";
-// };
-
-
-//   // ---------------- DELETE ----------------
-//   const handleDelete = async () => {
-//     if (selected.length === 0) return;
-
-//     const confirm = window.confirm("Delete selected files?");
-//     if (!confirm) return;
-
-//     const token = localStorage.getItem("token");
-
-//     await axios.post(
-//       "http://localhost:5000/api/admin/electives/delete-preference-files",
-//       { files: selected },
-//       { headers: { Authorization: `Bearer ${token}` } }
-//     );
-
-//     setSelected([]);
-//     fetchFiles();
-//   };
-
-//   return (
-//     <div className="admin-preferences-files">
-
-//       <h2>Preferences Files</h2>
-
-//       {/* ACTION BUTTONS */}
-//       <div className="action-bar">
-//         <button
-//           className="analyse-btn"
-//           disabled={selected.length === 0}
-//           onClick={handleAnalyse}
-//         >
-//           Analyse
-//         </button>
-
-//         <button
-//           className="delete-btn"
-//           disabled={selected.length === 0}
-//           onClick={handleDelete}
-//         >
-//           Delete
-//         </button>
-//       </div>
-
-//       {/* TABLE */}
-//       <table>
-//         <thead>
-//           <tr>
-//             <th>
-//               <input
-//                 type="checkbox"
-//                 checked={files.length > 0 && selected.length === files.length}
-//                 onChange={toggleSelectAll}
-//               />
-//             </th>
-//             <th>Regulation</th>
-//             <th>Department</th>
-//             <th>Semester</th>
-//             <th>Elective Type</th>
-//             <th>File</th>
-//           </tr>
-//         </thead>
-
-//         <tbody>
-//           {files.map((f, i) => (
-//             <tr key={i}>
-//               <td>
-//                 <input
-//                   type="checkbox"
-//                   checked={selected.includes(f.filename)}
-//                   onChange={() => toggleSelect(f.filename)}
-//                 />
-//               </td>
-
-//               <td>{f.regulation}</td>
-//               <td>{f.department}</td>
-//               <td>{f.semester}</td>
-//               <td>{f.electiveType}</td>
-
-//               <td>
-//                 <a
-//                   href={`http://localhost:5000/uploads/${f.filename}`}
-//                   target="_blank"
-//                   rel="noreferrer"
-//                 >
-//                   Download
-//                 </a>
-//               </td>
-//             </tr>
-//           ))}
-//         </tbody>
-//       </table>
-
-//     </div>
-//   );
-// };
-
-// export default AdminPreferencesFiles;
-
-
-
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "./AdminPreferencesFiles.css";
@@ -190,7 +27,7 @@ const AdminPreferencesFiles = () => {
       const token = localStorage.getItem("token");
 
       const res = await axios.get(
-        "http://localhost:5000/api/admin/electives/preference-files",
+        "http://98.130.122.229:5000/api/admin/electives/preference-files",
         { headers: { Authorization: `Bearer ${token}` } }
       );
 
@@ -246,7 +83,7 @@ const AdminPreferencesFiles = () => {
       const token = localStorage.getItem("token");
 
       await axios.post(
-        "http://localhost:5000/api/admin/electives/delete-preference-files",
+        "http://98.130.122.229:5000/api/admin/electives/delete-preference-files",
         { files: selected },          // ids
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -328,7 +165,7 @@ const AdminPreferencesFiles = () => {
 
               <td>
                 <a
-                  href={`http://localhost:5000/uploads/${f.filename}`}
+                  href={`http://98.130.122.229:5000/uploads/${f.filename}`}
                   target="_blank"
                   rel="noreferrer"
                 >

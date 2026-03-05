@@ -77,7 +77,7 @@ const AdminElectivesUpload = () => {
       }
 
       const res = await axios.post(
-        "http://localhost:5000/api/admin/electives/upload",
+        "http://98.130.122.229:5000/api/admin/electives/upload",
         formData,
         {
           headers: {
