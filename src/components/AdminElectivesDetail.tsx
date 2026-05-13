@@ -33,7 +33,7 @@ const AdminElectivesDetail = () => {
       try {
         const token = localStorage.getItem("token");
         const res = await axios.get<ElectivesData>(
-          "http://98.130.122.229:5000/api/admin/electives",
+          "http://elective-backend-prod-env.eba-gcy5guu7.ap-south-2.elasticbeanstalk.com/api/admin/electives",
           {
             headers: { Authorization: `Bearer ${token}` },
             params: { regulation, department, semester },
@@ -76,7 +76,7 @@ const AdminElectivesDetail = () => {
       const token = localStorage.getItem("token");
       const group = electivesData.electiveGroups[groupIndex];
       await axios.put(
-        `http://98.130.122.229:5000/api/admin/electives/update-group`,
+        `http://elective-backend-prod-env.eba-gcy5guu7.ap-south-2.elasticbeanstalk.com/api/admin/electives/update-group`,
         { regulation, department, semester, groupIndex, group },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -93,7 +93,7 @@ const AdminElectivesDetail = () => {
     try {
       const token = localStorage.getItem("token");
       await axios.put(
-        `http://98.130.122.229:5000/api/admin/electives/update-all`,
+        `http://elective-backend-prod-env.eba-gcy5guu7.ap-south-2.elasticbeanstalk.com/api/admin/electives/update-all`,
         { regulation, department, semester, electivesData },
         { headers: { Authorization: `Bearer ${token}` } }
       );
