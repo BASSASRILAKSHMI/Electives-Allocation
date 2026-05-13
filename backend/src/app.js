@@ -91,25 +91,32 @@ console.log("🔍 MONGO_URI loaded:", process.env.MONGO_URI ? "Yes ✅" : "No �
 const app = express();
 
 // ✅ CORS setup — allows local dev + deployed frontend
+// ✅ CORS setup — allows local dev + deployed frontend
 const allowedOrigins = [
   "http://localhost:5173",
-  process.env.FRONTEND_URL, // we'll set this in Vercel later
-];
+  "http://localhost:3000",
+  process.env.FRONTEND_URL,
+].filter(Boolean); // removes undefined values
 
 app.use(
   cors({
     origin: function (origin, callback) {
-      // Allow requests with no origin (Postman, mobile apps, etc.)
+      // Allow requests with no origin (Postman, mobile apps, server-to-server)
       if (!origin) return callback(null, true);
       if (allowedOrigins.includes(origin)) {
         return callback(null, true);
       }
-      return callback(new Error("Not allowed by CORS"));
+      console.log("❌ CORS blocked origin:", origin);
+      return callback(null, false); // reject without throwing
     },
-    methods: ["GET", "POST", "PUT", "DELETE"],
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     credentials: true,
+    allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
+
+// Handle preflight requests explicitly
+app.options("*", cors());
 
 // ✅ Middleware
 app.use(express.json());
