@@ -1,3 +1,4 @@
 backend/
 backend_backup/
 server/
+node_modules/
