@@ -4,10 +4,11 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon src/app.js",
-    "start": "node src/app.js"
-  },
+  "test": "echo \"Error: no test specified\" && exit 1",
+  "dev": "nodemon src/app.js",
+  "start": "node src/app.js",
+  "build": "echo 'No build needed'"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
