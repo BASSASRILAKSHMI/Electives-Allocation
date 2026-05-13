@@ -116,8 +116,8 @@ app.use(
 );
 
 // Handle preflight requests explicitly
-app.options("*", cors());
-
+// Handle preflight requests explicitly
+app.options(/.*/, cors());
 // ✅ Middleware
 app.use(express.json());
 app.use("/uploads", express.static("src/uploads"));
