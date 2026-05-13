@@ -27,7 +27,7 @@ const AdminElectivesCirculate: React.FC = () => {
         }
 
         const res = await axios.get(
-          "http://elective-backend-prod-env.eba-gcy5guu7.ap-south-2.elasticbeanstalk.com/api/admin/electives/meta",
+          `${import.meta.env.VITE_API_URL}/api/admin/electives/meta`,
           { headers: { Authorization: `Bearer ${token}` } }
         );
 
@@ -89,7 +89,7 @@ const AdminElectivesCirculate: React.FC = () => {
       const token = localStorage.getItem("token");
 
       await axios.post(
-        "http://elective-backend-prod-env.eba-gcy5guu7.ap-south-2.elasticbeanstalk.com/api/admin/electives/circulate",
+        `${import.meta.env.VITE_API_URL}/api/admin/electives/circulate`,
         { selected: toCirculate },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -106,7 +106,7 @@ const AdminElectivesCirculate: React.FC = () => {
       const token = localStorage.getItem("token");
 
       await axios.post(
-        "http://elective-backend-prod-env.eba-gcy5guu7.ap-south-2.elasticbeanstalk.com/api/admin/electives/stop-circulation",
+        `${import.meta.env.VITE_API_URL}/api/admin/electives/stop-circulation`,
         { selected: toStop },
         { headers: { Authorization: `Bearer ${token}` } }
       );

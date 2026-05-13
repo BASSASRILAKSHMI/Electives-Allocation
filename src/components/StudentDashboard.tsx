@@ -56,7 +56,7 @@ const StudentDashboard: React.FC = () => {
         }
 
         const res = await axios.get(
-          "http://elective-backend-prod-env.eba-gcy5guu7.ap-south-2.elasticbeanstalk.com/api/student/electives",
+          `${import.meta.env.VITE_API_URL}/api/student/electives`,
           { headers: { Authorization: `Bearer ${token}` } }
         );
 
@@ -153,7 +153,7 @@ const StudentDashboard: React.FC = () => {
       const token = localStorage.getItem("studentToken");
 
       await axios.post(
-        "http://elective-backend-prod-env.eba-gcy5guu7.ap-south-2.elasticbeanstalk.com/api/student/electives/preferences",
+        `${import.meta.env.VITE_API_URL}/api/student/electives/preferences`,
         { preferences },
         { headers: { Authorization: `Bearer ${token}` } }
       );

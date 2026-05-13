@@ -27,7 +27,7 @@ const AdminPreferencesFiles = () => {
       const token = localStorage.getItem("token");
 
       const res = await axios.get(
-        "http://elective-backend-prod-env.eba-gcy5guu7.ap-south-2.elasticbeanstalk.com/api/admin/electives/preference-files",
+        `${import.meta.env.VITE_API_URL}/api/admin/electives/preference-files`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
 
@@ -83,7 +83,7 @@ const AdminPreferencesFiles = () => {
       const token = localStorage.getItem("token");
 
       await axios.post(
-        "http://elective-backend-prod-env.eba-gcy5guu7.ap-south-2.elasticbeanstalk.com/api/admin/electives/delete-preference-files",
+        `${import.meta.env.VITE_API_URL}/api/admin/electives/delete-preference-files`,
         { files: selected },          // ids
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -165,7 +165,7 @@ const AdminPreferencesFiles = () => {
 
               <td>
                 <a
-                  href={`http://elective-backend-prod-env.eba-gcy5guu7.ap-south-2.elasticbeanstalk.com/uploads/${f.filename}`}
+                  href={`${import.meta.env.VITE_API_URL}/uploads/${f.filename}`}
                   target="_blank"
                   rel="noreferrer"
                 >

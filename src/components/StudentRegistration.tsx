@@ -33,7 +33,7 @@ const StudentRegistration: React.FC = () => {
       console.log("Parsed Data:", jsonData);
 
       // Send to backend
-      const res = await axios.post("http://elective-backend-prod-env.eba-gcy5guu7.ap-south-2.elasticbeanstalk.com/api/admin/upload-students", {
+      const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/admin/upload-students`, {
         students: jsonData,
       });
 

@@ -272,7 +272,7 @@ function App() {
 
     try {
       if (role === "student") {
-  const res = await axios.post("http://elective-backend-prod-env.eba-gcy5guu7.ap-south-2.elasticbeanstalk.com/api/auth/login/student", {
+  const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/auth/login/student`, {
     rollno,
     password,
   });
@@ -287,7 +287,7 @@ function App() {
 }
  else {
         // ✅ Admin login (still by email)
-        const res = await axios.post("http://elective-backend-prod-env.eba-gcy5guu7.ap-south-2.elasticbeanstalk.com/api/auth/login/admin", {
+        const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/auth/login/admin`, {
           email,
           password,
         });

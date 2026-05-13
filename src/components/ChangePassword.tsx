@@ -20,7 +20,7 @@ export default function ChangePassword() {
     }
 
     try {
-      const res = await axios.post("http://elective-backend-prod-env.eba-gcy5guu7.ap-south-2.elasticbeanstalk.com/api/change-password", {
+      const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/change-password`, {
         role,
         identifier,
         newPassword,

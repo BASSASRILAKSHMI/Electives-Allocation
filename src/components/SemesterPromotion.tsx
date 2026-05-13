@@ -31,7 +31,7 @@ export default function SemesterPromotion() {
     setLoading(true);
     setMessage("");
 
-    const response = await fetch("http://elective-backend-prod-env.eba-gcy5guu7.ap-south-2.elasticbeanstalk.com/api/promote", {
+    const response = await fetch(`${import.meta.env.VITE_API_URL}/api/promote`, {
       method: "POST",
       body: formData,
     });

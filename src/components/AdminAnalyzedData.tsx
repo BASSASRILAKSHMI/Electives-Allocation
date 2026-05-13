@@ -42,7 +42,7 @@ const AdminAnalyzedData = () => {
       const selectedIds: string[] = JSON.parse(localStorage.getItem("analyzeFiles") || "[]");
 
       // 1️⃣ Fetch all preference files
-      const res = await axios.get("http://elective-backend-prod-env.eba-gcy5guu7.ap-south-2.elasticbeanstalk.com/api/admin/electives/preference-files", {
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/admin/electives/preference-files`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -62,7 +62,7 @@ const AdminAnalyzedData = () => {
         let preference1Counts: Record<string, number> = {};
         try {
           const prefRes = await axios.get<PreferenceData[]>(
-            `http://elective-backend-prod-env.eba-gcy5guu7.ap-south-2.elasticbeanstalk.com/api/admin/electives/file-preferences/${file._id}`,
+            `${import.meta.env.VITE_API_URL}/api/admin/electives/file-preferences/${file._id}`,
             { headers: { Authorization: `Bearer ${token}` } }
           );
 
@@ -80,7 +80,7 @@ const AdminAnalyzedData = () => {
         let masterElectives: Subject[] = [];
         try {
           const masterRes = await axios.get<Subject[]>(
-            `http://elective-backend-prod-env.eba-gcy5guu7.ap-south-2.elasticbeanstalk.com/api/admin/electives/master`,
+            `${import.meta.env.VITE_API_URL}/api/admin/electives/master`,
             {
               headers: { Authorization: `Bearer ${token}` },
               params: {
@@ -100,7 +100,7 @@ const AdminAnalyzedData = () => {
         let allocationDone = false;
         try {
           const allocRes = await axios.get(
-            `http://elective-backend-prod-env.eba-gcy5guu7.ap-south-2.elasticbeanstalk.com/api/admin/electives/allocations/check/${file._id}`,
+            `${import.meta.env.VITE_API_URL}/api/admin/electives/allocations/check/${file._id}`,
             { headers: { Authorization: `Bearer ${token}` } }
           );
           allocationDone = allocRes.data.exists; // true/false from backend
@@ -148,7 +148,7 @@ const AdminAnalyzedData = () => {
       }
 
       await axios.post(
-        "http://elective-backend-prod-env.eba-gcy5guu7.ap-south-2.elasticbeanstalk.com/api/admin/electives/run-allocation",
+        `${import.meta.env.VITE_API_URL}/api/admin/electives/run-allocation`,
         { allocations },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -169,7 +169,7 @@ const AdminAnalyzedData = () => {
     try {
       const token = localStorage.getItem("token");
       const { data } = await axios.get(
-        `http://elective-backend-prod-env.eba-gcy5guu7.ap-south-2.elasticbeanstalk.com/api/admin/electives/allocations/${fileId}/download`,
+        `${import.meta.env.VITE_API_URL}/api/admin/electives/allocations/${fileId}/download`,
         { headers: { Authorization: `Bearer ${token}` }, responseType: "blob" }
       );
       const url = window.URL.createObjectURL(new Blob([data]));

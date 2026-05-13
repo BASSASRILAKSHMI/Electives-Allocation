@@ -19,7 +19,7 @@ const AdminElectivesCheckUpdate = () => {
       try {
         const token = localStorage.getItem("token"); // 🔥 Admin token
         const res = await axios.get<ElectiveMeta[]>(
-          "http://elective-backend-prod-env.eba-gcy5guu7.ap-south-2.elasticbeanstalk.com/api/admin/electives/meta",
+          `${import.meta.env.VITE_API_URL}/api/admin/electives/meta`,
           {
             headers: {
               Authorization: `Bearer ${token}`, // 🔑 send token to backend

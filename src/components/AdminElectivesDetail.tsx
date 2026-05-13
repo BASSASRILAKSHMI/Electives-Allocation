@@ -33,7 +33,7 @@ const AdminElectivesDetail = () => {
       try {
         const token = localStorage.getItem("token");
         const res = await axios.get<ElectivesData>(
-          "http://elective-backend-prod-env.eba-gcy5guu7.ap-south-2.elasticbeanstalk.com/api/admin/electives",
+          `${import.meta.env.VITE_API_URL}/api/admin/electives`,
           {
             headers: { Authorization: `Bearer ${token}` },
             params: { regulation, department, semester },
@@ -76,7 +76,7 @@ const AdminElectivesDetail = () => {
       const token = localStorage.getItem("token");
       const group = electivesData.electiveGroups[groupIndex];
       await axios.put(
-        `http://elective-backend-prod-env.eba-gcy5guu7.ap-south-2.elasticbeanstalk.com/api/admin/electives/update-group`,
+        `${import.meta.env.VITE_API_URL}/api/admin/electives/update-group`,
         { regulation, department, semester, groupIndex, group },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -93,7 +93,7 @@ const AdminElectivesDetail = () => {
     try {
       const token = localStorage.getItem("token");
       await axios.put(
-        `http://elective-backend-prod-env.eba-gcy5guu7.ap-south-2.elasticbeanstalk.com/api/admin/electives/update-all`,
+        `${import.meta.env.VITE_API_URL}/api/admin/electives/update-all`,
         { regulation, department, semester, electivesData },
         { headers: { Authorization: `Bearer ${token}` } }
       );
